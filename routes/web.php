@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 #------------------------------------
-# Saludos con parametro obligatorio
-Route::get('/saludo/{nombre}',function($nombre){
-    return 'hola ' . $nombre;
+# Saludos con parametro No obligatorio u opcionales
+Route::get('/saludo/{nombre?}',function($nombre = 'Invitado'){
+    return 'Saludos ' . $nombre;
 });
 
