@@ -12,16 +12,20 @@
 */
 
 
-
-# Peticion Get y la funcion tambien conocida como closure
-# definimos la Url y respondemos con una funcion
-Route::get('/', function () {
-    return 'hola desde la pagina de inicio';
-});
-
+#====================================
+#   Rutas con nombres
+#   contactame, es la url
+#   contactos, es el nombre de la ruta
 #------------------------------------
-# Saludos con parametro No obligatorio u opcionales
-Route::get('/saludo/{nombre?}',function($nombre = 'Invitado'){
-    return 'Saludos ' . $nombre;
+Route::get('contactame', function () {
+    return 'seccion de contactos';
+})->name('contactos');
+
+Route::get('/', function () {
+    echo "<a href='" . route('contactos') . "'>Contactos 1</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 2</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 3</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 4</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 5</a><br>";
 });
 
