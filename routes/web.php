@@ -23,3 +23,7 @@ Route::view('/portafolio', 'portafolio')->name('portafolio');
 Route::view('/contact', 'contact')->name('contact');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
