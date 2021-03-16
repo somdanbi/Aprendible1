@@ -40,19 +40,27 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
+                            @if(!$users)
+                                @foreach($users as $user)
+                                    <tr>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>
+                                            <img src="{{asset('img/no-avatar.svg')}}" alt="" class="img-responsive" width="60" height="50">
+                                        </td>
+                                        <td>{{$user->email}}</td>
+
+
+                                    </tr>
+                                @endforeach
+                            @else
                                 <tr>
-                                    <td>{{$user->id}}</td>
-                                    <td>{{$user->name}}</td>
-                                    <td>
-                                        <img src="{{asset('img/no-avatar.svg')}}" alt="" class="img-responsive" width="60" height="50">
-                                    </td>
-                                    <td>{{$user->email}}</td>
-
-
+                                    <td>-</td>
+                                    <td>No hay usuarios para mostrar</td>
+                                    <td>-</td>
+                                    <td>-</td>
                                 </tr>
-                            @endforeach
-
+                            @endif
                             </tbody>
                         </table>
                     </div>
