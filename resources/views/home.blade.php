@@ -47,7 +47,7 @@
                                         <td>
                                             <img src="{{asset('img/no-avatar.svg')}}" alt="" class="img-responsive" width="60" height="50">
                                         </td>
-                                        <td>{{$user->email}}</td>
+                                        <td>{{var_dump($loop)}}</td>
 
 
                                     </tr>
