@@ -40,7 +40,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(!$users)
+                            @if(isset($users))
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{$user->id}}</td>
