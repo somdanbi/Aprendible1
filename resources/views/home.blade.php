@@ -40,8 +40,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(isset($users))
-                                @foreach($users as $user)
+                                @forelse($users as $user)
                                     <tr>
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
@@ -52,15 +51,12 @@
 
 
                                     </tr>
-                                @endforeach
-                            @else
+
+                                @empty
                                 <tr>
-                                    <td>-</td>
-                                    <td>No hay usuarios para mostrar</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    No hay usuarios para mostrar
                                 </tr>
-                            @endif
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
